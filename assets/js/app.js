@@ -19,8 +19,8 @@ function enviar(send) {
     agregarMensaje(texto);
     textArea.value = "";
     contador.innerHTML = 140;
-    contador.classList.remove("colorUno");
-    contador.classList.remove("colorDos");
+    contador.classList.remove("alertColor");
+    contador.classList.remove("warning");
     resize();
     boton.disabled = true;
 }
@@ -29,7 +29,7 @@ function validar() {
     boton.disabled = false;
     var longitud = textArea.value.trim().length;
     contarCaracteres(longitud);
-    cambioColor(longitud);
+    changeColor(longitud);
 }
 
 function agregarMensaje(texto) {
@@ -55,7 +55,7 @@ function contarCaracteres(longitud) {
 }
 
 //Función cambio de color
-function cambioColor(longitud) {
+function changeColor(longitud) {
     if(longitud > 100) {
         contador.classList.add("alertColor");
     }
@@ -74,11 +74,8 @@ function cambioColor(longitud) {
     }
 }
 
-function crecer() {
-    textArea.style.cssText = "height: auto";
-    textArea.style.cssText = "height: " + textArea.scrollHeight + "px";
-}
-
 function resize() {
     textArea.style.cssText = "height: auto";
+    textArea.style.cssText = "height: auto";
+    textArea.style.cssText = "height: " + textArea.scrollHeight + "px";
 }
